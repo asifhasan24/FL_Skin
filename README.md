@@ -39,6 +39,12 @@ To address these issues, we propose an **Encrypted FedAvg-Based Explainable Fede
 
 
 ## How to Run
+**Install Dependencies**
+In your terminal, navigate to the repository directory and run:
+```bash
+pip install -r requirements.txt
+```
+
 
 **Preprocessing:**  
 Run the data preprocessing script to load the CSV, perform oversampling, split the data into training and test sets, and save the client data:
