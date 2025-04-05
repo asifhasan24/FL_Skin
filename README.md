@@ -1,14 +1,12 @@
-This repository contains a Jupyter Notebook implementing a Federated Learning (FL) model with Homomorphic Encryption using TensorFlow and Keras. 
-The notebook trains a lightweight multi scale CNN model across multiple clinets without sharing raw data, ensuring privacy preservation.
+This repository contains a Jupyter Notebook implementing an Explainable Federated Learning (FL) model with Homomorphic Encryption using TensorFlow and Keras. 
 
-Features
+Abstract:
+Skin diseases pose a major public health challenge, with skin cancer being the most prevalent malignancy. Early detection is critical for improving patient outcomes, yet traditional diagnostic methods rely on expert evaluation, which is limited by clinician variability, image quality, and accessibility constraints. Deep learning (DL)-based models offer automated diagnostic capabilities but require large-scale centralized data aggregation, which conflicts with privacy regulations and poses security risks. Federated Learning (FL) enables collaborative training across multiple hospitals without sharing raw patient data, yet it introduces communication overhead, security vulnerabilities, and interpretability challenges, hindering its real-world deployment. To address these issues, an Encrypted FedAvg-Based Explainable Federated Learning approach has been proposed utilizing a Lightweight Deep Learning Multi-Scale Convolutional Neural Network (LWMS-CNN) for efficient, privacy-preserving, and interpretable skin cancer diagnosis. The proposed method integrates Homomorphic Encryption (HE) for secure model aggregation, preventing privacy breaches while maintaining strong diagnostic performance. Additionally, SHapley Additive exPlanations (SHAP) enhances interpretability, enabling clinicians to understand AI-driven predictions. Experimental evaluations on the HAM10000 dataset demonstrate that the proposed LWMS-CNN-FL model achieves 98.6% accuracy, with only a 0.3% tradeoff when encryption is applied, ensuring robust security without compromising diagnostic reliability. By integrating lightweight deep learning, federated learning, encryption, and explainability, this study presents a scalable, privacy-preserving, computationally efficient, and clinically interpretable AI-driven solution for secure and accurate early skin cancer detection in real-world healthcare applications.
 
-Implements Federated Learning using TensorFlow/Keras
+Contributions:
 
-Utilizes convolutional layers for model architecture
+1.	The proposed Lightweight Multi-Scale CNN achieves superior accuracy compared to state-of-the-art (SOTA) models while maintaining the lowest number of trainable parameters, effectively balancing performance and efficiency. 
+2.	Unlike traditional deep learning models, this federated approach ensures data privacy and security constraints without compromising performance.
+3.	Homomorphic encryption ensures secure aggregation of model updates, significantly reducing risks associated with data exposure.
+4.	Integration of SHAP provides interpretability, enabling clinicians and researchers to comprehend the reasoning behind AI-generated predictions.
 
-Includes common evaluation metrics like Recall, Precision, and AUC
-
-Designed for distributed training scenarios
-
-Provides model security by Homomorphic Encryption
