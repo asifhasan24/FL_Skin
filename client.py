@@ -42,7 +42,7 @@ def encrypt_weights(context, weights, poly_modulus_degree):
 # Main Client Code
 # ---------------------------
 def main(client_id):
-    # Load local client data.
+    # Load local client data (images are 224x224x3)
     data = np.load(f'client_data_{client_id}.npz')
     X_client = data["X"]
     y_client = data["Y"]
