@@ -30,7 +30,7 @@ To address these issues, we propose an **Encrypted FedAvg-Based Explainable Fede
 
 ---
 
-<h2 style="text-align: center;">🖼️ CNN Model Architecture</h2>
+<h2 style="text-align: center;">🖼️ Used Federated Algorithm with Homomorphic Encryption</h2>
 <p align="center">
   <img src="https://github.com/asifhasan24/FL_Skin/blob/main/Picture1.png" width="600"/>
 </p>
