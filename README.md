@@ -29,31 +29,38 @@ To address these issues, we propose an **Encrypted FedAvg-Based Explainable Fede
 ---
 
 
+Below is the updated "How to Run" section with instructions to download the required image folders from Kaggle:
+
+---
+
 ## How to Run
-**Install Dependencies**
+
+### Install Dependencies
 In your terminal, navigate to the repository directory and run:
 ```bash
 pip install -r requirements.txt
 ```
 
+### Download the Image Folders
+Download the folders **"HAM10000_images_part_1"** and **"HAM10000_images_part_2"** from the following Kaggle dataset:
+[https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
 
-**Preprocessing:**  
-To use the Ham10000_metadata.csv, you need to specify the path to the folder containing the images. The CSV contains filenames (in the image_id column), which should be combined with the image folder path to load the images properly. Run the data preprocessing script to load the CSV, perform oversampling, split the data into training and test sets, and save the client data:
+Place these folders in your repository directory (or update the paths in `data_preprocessing.py` accordingly).
 
+### Preprocessing
+Run the data preprocessing script to load the CSV, perform oversampling, split the data into training and test sets, and save the client data:
 ```bash
 python data_preprocessing.py
 ```
 
-**Server:**  
-Start the server script. It will initialize (or load) the global model and wait for client updates over 50 epochs:
-
+### Start the Server
+Start the server script. It will load or create the global model and run 50 federated epochs, waiting for all client updates each round:
 ```bash
 python server.py
 ```
 
-**Clients:**  
-Run the client script for each client (IDs 1 to 5). For example:
-
+### Run the Clients
+In parallel (or sequentially for testing), run the client script for each client (IDs 1 through 5):
 ```bash
 python client.py 1
 python client.py 2
@@ -61,7 +68,6 @@ python client.py 3
 python client.py 4
 python client.py 5
 ```
-
 
 
 ---
