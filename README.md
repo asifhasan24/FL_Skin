@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 
 **Preprocessing:**  
-Run the data preprocessing script to load the CSV, perform oversampling, split the data into training and test sets, and save the client data:
+To use the Ham10000_metadata.csv, you need to specify the path to the folder containing the images. The CSV contains filenames (in the image_id column), which should be combined with the image folder path to load the images properly. Run the data preprocessing script to load the CSV, perform oversampling, split the data into training and test sets, and save the client data:
 
 ```bash
 python data_preprocessing.py
