@@ -30,11 +30,11 @@ To address these issues, we propose an **Encrypted FedAvg-Based Explainable Fede
 
 ---
 
-## 📎 Supporting Documents
+<h2 style="text-align: center;">🖼️ CNN Model Architecture</h2>
+<p align="center">
+  <img src="https://github.com/asifhasan24/FL_Skin/blob/main/Picture1.png" width="600"/>
+</p>
 
-- 📄 [CNN Model Architecture (PDF)](https://github.com/asifhasan24/FL_Skin/blob/main/CNN%20Model.pdf)
-- 📄 [System Diagram (PDF)](https://github.com/asifhasan24/FL_Skin/blob/main/Diagram.pdf)
-- 📄 [Federated Learning Algorithm (PDF)](https://github.com/asifhasan24/FL_Skin/blob/main/Federated%20Algo.pdf)
 
 ---
 
