@@ -21,15 +21,6 @@ To address these issues, we propose an **Encrypted FedAvg-Based Explainable Fede
 
 ---
 
-## ✅ Key Contributions
-
-1. 🚀 **Lightweight Multi-Scale CNN**: Outperforms state-of-the-art models with significantly fewer trainable parameters, achieving an optimal balance between efficiency and performance.
-2. 🔒 **Federated Learning for Privacy**: Trains collaboratively across devices/institutions without sharing raw data, addressing privacy and regulatory concerns.
-3. 🛡️ **Homomorphic Encryption**: Securely aggregates model updates, protecting sensitive medical data during training.
-4. 🧩 **SHAP-based Explainability**: Adds interpretability to the AI predictions, aiding clinicians in decision-making and boosting trust in model outputs.
-
----
-
 <h2 style="text-align: center;">🖼️ Used Federated Algorithm with Homomorphic Encryption</h2>
 <p align="center">
   <img src="https://github.com/asifhasan24/FL_Skin/blob/main/images/Picture1.png" width="600"/>
@@ -75,14 +66,11 @@ python client.py 5
 
 ---
 
-## 🗂️ Repository Structure
 
-```bash
-.
-├── notebook.ipynb                 # Main Jupyter Notebook
-├── CNN Model.pdf                  # PDF of CNN architecture
-├── Diagram.pdf                    # PDF of FL + HE system diagram
-├── Federated Algo.pdf             # PDF of the FL algorithm
-├── models/                        # Model weights and checkpoints
-├── utils/                         # Helper scripts for encryption, SHAP, etc.
-└── README.md                      # This file
+## ✅ Key Contributions
+
+1. 🚀 **Lightweight Multi-Scale CNN**: Outperforms state-of-the-art models with significantly fewer trainable parameters, achieving an optimal balance between efficiency and performance.
+2. 🔒 **Federated Learning for Privacy**: Trains collaboratively across devices/institutions without sharing raw data, addressing privacy and regulatory concerns.
+3. 🛡️ **Homomorphic Encryption**: Securely aggregates model updates, protecting sensitive medical data during training.
+4. 🧩 **SHAP-based Explainability**: Adds interpretability to the AI predictions, aiding clinicians in decision-making and boosting trust in model outputs.
+
