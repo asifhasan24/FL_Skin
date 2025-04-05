@@ -37,8 +37,8 @@ To address these issues, we propose an **Encrypted FedAvg-Based Explainable Fede
 
 ---
 
-```markdown
-# How to Run
+
+## How to Run
 
 **Preprocessing:**  
 Run the data preprocessing script to load the CSV, perform oversampling, split the data into training and test sets, and save the client data:
