@@ -35,6 +35,37 @@ To address these issues, we propose an **Encrypted FedAvg-Based Explainable Fede
   <img src="https://github.com/asifhasan24/FL_Skin/blob/main/Picture1.png" width="600"/>
 </p>
 
+---
+
+```markdown
+# How to Run
+
+**Preprocessing:**  
+Run the data preprocessing script to load the CSV, perform oversampling, split the data into training and test sets, and save the client data:
+
+```bash
+python data_preprocessing.py
+```
+
+**Server:**  
+Start the server script. It will initialize (or load) the global model and wait for client updates over 50 epochs:
+
+```bash
+python server.py
+```
+
+**Clients:**  
+Run the client script for each client (IDs 1 to 5). For example:
+
+```bash
+python client.py 1
+python client.py 2
+python client.py 3
+python client.py 4
+python client.py 5
+```
+
+
 
 ---
 
