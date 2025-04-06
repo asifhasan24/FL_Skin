@@ -53,14 +53,15 @@ Run the data preprocessing script to load the CSV, perform oversampling, split t
 python data_preprocessing.py
 ```
 
-### Start the Server
-Start the server script. It will load or create the global model and run 50 federated epochs, waiting for all client updates each round:
+### Start the Server (Aggregator)
+Start the server script. It waits for encrypted updates from all clients, aggregates them homomorphically, and publishes the aggregated encrypted update:
 ```bash
 python server.py
 ```
 
 ### Run the Clients
-In parallel (or sequentially for testing), run the client script for each client (IDs 1 through 5):
+In parallel, run the client training script for each client (IDs 1–5). Note that client 1 will generate and share the HE context at the very beginning; thereafter, all clients follow the same procedure.
+
 ```bash
 python client.py 1
 python client.py 2
@@ -68,6 +69,17 @@ python client.py 3
 python client.py 4
 python client.py 5
 ```
+### Explainability
+To generate explainability reports, each client may run:
+
+```bash
+python client_explain.py 1
+python client_explain.py 2
+python client_explain.py 3
+python client_explain.py 4
+python client_explain.py 5
+```
+
 
 
 ---
