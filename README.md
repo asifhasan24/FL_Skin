@@ -1,4 +1,4 @@
-# 🧠 Explainable Federated Learning with Homomorphic Encryption for Skin Cancer Diagnosis
+# Explainable Federated Learning with Homomorphic Encryption for Skin Cancer Diagnosis
 
 This repository contains a Jupyter Notebook implementing an **Explainable Federated Learning (FL)** model with **Homomorphic Encryption (HE)** using **TensorFlow** and **Keras** for skin cancer classification.
 
