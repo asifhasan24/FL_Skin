@@ -15,7 +15,7 @@ from imblearn.over_sampling import RandomOverSampler
 IMAGE_SIZE = 224
 NUM_CLIENTS = 5
 metadata_csv = "HAM10000_metadata.csv"
-# The images are stored in two subfolders
+# Images are stored in two subfolders:
 image_subfolders = ["HAM10000_images_part_1", "HAM10000_images_part_2"]
 
 # ---------------------------
@@ -27,10 +27,8 @@ print("Original metadata shape:", metadata.shape)
 # ---------------------------
 # Map Diagnosis to Numeric Labels
 # ---------------------------
-# Mapping: keys correspond to dx abbreviations
 label_map = {"nv": 4, "mel": 6, "bkl": 2, "bcc": 1, "vasc": 5, "akiec": 0, "df": 3}
 metadata['label'] = metadata['dx'].map(label_map)
-# Drop rows with missing label (if any)
 metadata = metadata.dropna(subset=['label'])
 metadata['label'] = metadata['label'].astype(int)
 
@@ -52,20 +50,17 @@ for idx, row in metadata.iterrows():
     image_id = row['image_id']
     label = row['label']
     image_loaded = False
-    # Check each subfolder for the image
     for folder in image_subfolders:
         image_path = os.path.join(folder, image_id + ".jpg")
         if os.path.exists(image_path):
             try:
-                # Load image and resize to IMAGE_SIZE x IMAGE_SIZE
                 img = load_img(image_path, target_size=(IMAGE_SIZE, IMAGE_SIZE))
                 img_array = img_to_array(img)  # shape: (224,224,3)
-                # Scale pixel values to [0,1]
                 img_array = img_array.astype("float32") / 255.0
                 images.append(img_array)
                 labels.append(label)
                 image_loaded = True
-                break  # Found the image; no need to check other folders
+                break
             except Exception as e:
                 print(f"Error loading image {image_path}: {e}")
     if not image_loaded:
@@ -84,13 +79,12 @@ images_flat = images.reshape(num_samples, -1)
 oversample = RandomOverSampler()
 images_flat_res, labels_res = oversample.fit_resample(images_flat, labels)
 print("After oversampling, data shape:", images_flat_res.shape)
-# Reshape oversampled images back to (num_samples, IMAGE_SIZE, IMAGE_SIZE, 3)
 images_res = images_flat_res.reshape(-1, IMAGE_SIZE, IMAGE_SIZE, c)
 
 # ---------------------------
 # Convert Labels to Categorical
 # ---------------------------
-num_classes = 7  # Classes 0 through 6
+num_classes = 7
 labels_cat = to_categorical(labels_res, num_classes)
 print("Labels converted to categorical with", num_classes, "classes.")
 
@@ -119,6 +113,6 @@ for client_id in range(1, NUM_CLIENTS + 1):
     np.savez(f'client_data_{client_id}.npz', X=X_client, Y=Y_client)
     print(f"Saved data for client {client_id}: {X_client.shape}")
 
-# Save the test set for server evaluation
+# Optionally, save the test set for offline evaluation.
 np.savez('server_test_data.npz', X=X_test, Y=Y_test)
-print("Saved global test data for the server.")
+print("Saved global test data for offline evaluation.")
